@@ -11,11 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e5b91e0-a3e1-4907-b750-47701c160d7d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../CodingHours/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CodingHours/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HelloOthers/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloOthers/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Swap/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Swap/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="5e5b91e0-a3e1-4907-b750-47701c160d7d" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -77,6 +73,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -112,12 +109,12 @@
       <option name="presentableId" value="Default" />
       <updated>1554291981845</updated>
       <workItem from="1554291983096" duration="29000" />
-      <workItem from="1554292013109" duration="526000" />
+      <workItem from="1554292013109" duration="593000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="555000" />
+    <option name="totallyTimeSpent" value="622000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="23" width="1419" height="777" extended-state="0" />
@@ -130,7 +127,7 @@
       <window_info anchor="bottom" id="CMake" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.329927" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.329927" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />

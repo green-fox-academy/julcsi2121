@@ -11,10 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="197a7a9e-37bb-4377-9361-1e3f667991fa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../HelloOthers/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloOthers/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../IntroduceYourself/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../IntroduceYourself/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="197a7a9e-37bb-4377-9361-1e3f667991fa" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -86,6 +83,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -119,12 +117,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1554288580486</updated>
-      <workItem from="1554288582014" duration="609000" />
+      <workItem from="1554288582014" duration="697000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="609000" />
+    <option name="totallyTimeSpent" value="697000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="23" width="1419" height="777" extended-state="0" />
@@ -141,7 +139,7 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.329927" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.329927" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />

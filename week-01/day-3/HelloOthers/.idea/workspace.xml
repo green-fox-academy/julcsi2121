@@ -12,7 +12,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a532c731-6b5e-41b8-a671-9bb9cf2b69fb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../SecondsInADay/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SecondsInADay/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MileToKmConverter/.idea/MileToKmConverter.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MileToKmConverter/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MileToKmConverter/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MileToKmConverter/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloUser/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloUser/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

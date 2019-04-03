@@ -2,7 +2,7 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="OddEven" targetName="OddEven" />
+      <config projectName="OneTwoALot" targetName="OneTwoALot" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -11,7 +11,14 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95b7e3f7-3fc3-4920-a9ec-fef0961beea0" name="Default Changelist" comment="" />
+    <list default="true" id="65c47283-03cd-4276-a455-6ee3da15cf22" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/OneTwoALot.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloOthers/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloOthers/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OddEven/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../OddEven/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,8 +40,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+            <state relative-caret-position="225">
+              <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -48,16 +55,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/main.cpp" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectConfigurationFiles">
-    <option name="files">
-      <list>
-        <option value="$PROJECT_DIR$/.idea/OddEven.iml" />
-        <option value="$PROJECT_DIR$/.idea/misc.xml" />
-        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
-        <option value="$PROJECT_DIR$/.idea/modules.xml" />
       </list>
     </option>
   </component>
@@ -96,7 +93,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="OddEven" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OddEven" TARGET_NAME="OddEven" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OddEven" RUN_TARGET_NAME="OddEven">
+    <configuration name="OneTwoALot" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OneTwoALot" TARGET_NAME="OneTwoALot" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OneTwoALot" RUN_TARGET_NAME="OneTwoALot">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -107,21 +104,20 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="95b7e3f7-3fc3-4920-a9ec-fef0961beea0" name="Default Changelist" comment="" />
-      <created>1554295264982</created>
+      <changelist id="65c47283-03cd-4276-a455-6ee3da15cf22" name="Default Changelist" comment="" />
+      <created>1554295927524</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1554295264982</updated>
-      <workItem from="1554295266613" duration="659000" />
+      <updated>1554295927524</updated>
+      <workItem from="1554295929443" duration="492000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="659000" />
+    <option name="totallyTimeSpent" value="492000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="23" width="1419" height="777" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24981844" />
@@ -134,7 +130,7 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.329927" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.329927" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -154,8 +150,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+        <state relative-caret-position="225">
+          <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
         </state>
       </provider>
     </entry>

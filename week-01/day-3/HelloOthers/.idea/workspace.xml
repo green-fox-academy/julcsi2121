@@ -12,7 +12,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a532c731-6b5e-41b8-a671-9bb9cf2b69fb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../MileToKmConverter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MileToKmConverter/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../OneTwoALot/.idea/OneTwoALot.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../OneTwoALot/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../OneTwoALot/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../OneTwoALot/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OddEven/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../OddEven/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -121,7 +125,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="23" width="1419" height="777" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25344953" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />

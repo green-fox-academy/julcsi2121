@@ -18,12 +18,14 @@ int main(int argc, char* args[]) {
     };
 
     // quotation-marks-only indicate empty spaces in the matrix
-    for (int i = 0; i < 3; ++i) {
-        for (int j = 0; j < 5; ++j) {
+    for (int i = 0; i < sizeof(arrayOfColors) / sizeof(arrayOfColors[i]); ++i) {
+        for (int j = 0; j < (sizeof(arrayOfColors[i]) / sizeof(std::string)); ++j) {
             std::cout << "\""  << arrayOfColors[i][j] << "\" ";
         }
         std::cout << std::endl;
     }
+
+    std::cout << sizeof(arrayOfColors) / sizeof(arrayOfColors[1]);
 
     return 0;
 }

@@ -1,23 +1,16 @@
 #include <iostream>
 #include <string>
 
-std::string appendAFunc(std::string);
-
 int main(int argc, char* args[]) {
 
-    // - Create a string variable named `typo` and assign the value `Chinchill` to it
-    // - Write a function called `appendAFunc` that gets a string as an input,
-    //   appends an 'a' character to its end and returns with a string
-    //
-    // - Print the result of `appendAFunc(typo)`
-    std::string typo = "Chinchill";
-    std::cout << "Appended string: " << appendAFunc(typo) << std::endl;
+    // - Create an array variable named `animals`
+    //   with the following content: `["koal", "pand", "zebr"]`
+    // - Add all elements an `"a"` at the end
+    std::string animals[3] = {"koal", "pand", "zebr"};
+    for (int i = 0; i < sizeof(animals) / sizeof(animals[0]); ++i) {
+        animals[i] += "a";
+        std::cout << animals[i]  <<  std::endl;
+    }
+
     return 0;
-}
-
-
-//choose return because i wanted to preserve the original string (instead of void name(std::string&)
-std::string appendAFunc(std::string typo)
-{
-    return typo += "a";
 }

@@ -32,6 +32,7 @@ int main(int argc, char* args[]) {
                 continue;
             } else {
                 std::cout << " ";
+
         }
         }
         std::cout << "*";

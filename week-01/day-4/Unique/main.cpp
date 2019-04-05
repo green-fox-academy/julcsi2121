@@ -9,7 +9,7 @@ int main(int argc, char* args[]) {
     //  Don't forget you have pass the size of the list as a parameter as well
     //  Returns a list of numbers where every number in the list occurs only once
 
-    //  Example
+    //  lista bekérése
     int size;
     std::cout << "Give me a number - this is going to be the length of your list." << std::endl;
     std::cin >> size;
@@ -39,14 +39,14 @@ void unique(int numbers[], int size) {
                 break;
             } else if (newNumbers[j] == 0) {  // originally, if the jth value was 0, add the new number
                 newNumbers[j] = numbers[i];
-                break; // break is needed, if j is not i-1, otherwise it will duplicate the value of index j
+                break; // break is needed, if j is not i-1 it will at least duplicate the value of index j
             }
         }
     }
     //printing out new list
     std::cout << "Unique list:" << std::endl;
     for (int k = 0; k < size ; ++k) {
-        if(newNumbers[k] != 0) {   //condition is needed, because it writes out zeros to the end
+        if(newNumbers[k] != 0) {   //condition is needed, because it writes zeros to the end
             std::cout << newNumbers[k] << std::endl;
         }
     }

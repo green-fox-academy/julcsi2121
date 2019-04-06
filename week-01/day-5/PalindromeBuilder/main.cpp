@@ -6,6 +6,7 @@ int main() {
     std::cout << "Give me a string" << std::endl;
     std::string example;
     std::cin >> example;
+    std::cout << example;
     int size = example.length();
     std::string palindrom = reverseString(example, size);
     std::cout << example << palindrom << std::endl;

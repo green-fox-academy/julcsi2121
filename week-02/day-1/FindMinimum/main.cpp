@@ -9,8 +9,11 @@ int main()
 
     int numbers[] = {12, 4, 66, 101, 87, 3, 15};
     int size = sizeof(numbers) / sizeof(numbers[0]);
+    int *pointer2 = &numbers[5];
+    std::cout << pointer2 << std::endl;
     int *result = findMinimum(numbers, size);
     std::cout << *result << std::endl;
+    std::cout << result << std::endl;
 
     return 0;
 }
@@ -20,7 +23,8 @@ int *findMinimum (int numbers[], int size)
     int *pointer = numbers;
     for (int i = 0; i < size; ++i) {
         if (*pointer >= numbers[i]) {
-            pointer = &numbers[i];    //ekvivalens, ha *pointer = numbers[i]
+            pointer = &numbers[i];    //ekvivalens, ha *pointer = numbers[i] ?
+            //*pointer = numbers[i];
         }
     }
     return pointer;

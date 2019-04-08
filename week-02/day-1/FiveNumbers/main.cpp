@@ -1,7 +1,7 @@
 #include <iostream>
 
 void askForElements(int numbers[], int size);
-void printByPointer(int numbers[], int size);
+void printValueByPointer(int numbers[], int size);
 
 int main()
 {
@@ -11,7 +11,7 @@ int main()
     int size = 5;
     int numbers[size];
     askForElements(numbers, size);
-    printByPointer(numbers, size);
+    printValueByPointer(numbers, size);
 
     return 0;
 }
@@ -26,12 +26,12 @@ void askForElements(int numbers[], int size)
     }
 }
 
-void printByPointer(int numbers[], int size)
+void printValueByPointer(int numbers[], int size)
 {
     int *pointer = numbers;
     std::cout << "Printed by pointer: " << std::endl;
     for (int i = 0; i < size; ++i) {
         pointer = &numbers[i];
-        std::cout << "Address of: " << i+1 << ". element: " << pointer << std::endl;
+        std::cout << "Value of " << i+1 << ". element: " << *pointer << std::endl;
     }
 }

@@ -3,7 +3,7 @@
 // std::string reverse(std::string text) - pass by value - másolat jön létre, eredeti nem változik
 // std::string reverse(std::string& text) - pass by reference - eredeti változóba beleírhat
 // std::string reverse(const std::string& text) - const reference - nem jön létre másolat, de csak read-only
-std::string reverse(std::string& text);
+std::string reverse(const std::string& text);
 
 int main(int argc, char* args[])
 {
@@ -19,7 +19,7 @@ int main(int argc, char* args[])
     return 0;
 }
 
-std::string reverse(std::string& text)
+std::string reverse(const std::string& text)
 {
     //létrehozni belül egy másolatot, és azt swappolni, majd kiíratni?
     for (int i = 0; i < text.length(); ++i) {

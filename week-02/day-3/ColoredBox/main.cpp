@@ -24,6 +24,17 @@ void draw()
 {
     // Draw a box that has different colored lines on each edge.
     // The center of the box should align with the center of the screen.
+
+    int a = 100;
+
+    SDL_SetRenderDrawColor(gRenderer, 255 /*R*/, 0 /*G*/, 0 /*B*/, 0xFF /*A*/);
+    SDL_RenderDrawLine(gRenderer, (SCREEN_WIDTH - a) / 2, (SCREEN_HEIGHT - a) / 2, (SCREEN_WIDTH + a) / 2, (SCREEN_HEIGHT - a) / 2);
+    SDL_SetRenderDrawColor(gRenderer, 0 /*R*/, 255 /*G*/, 0 /*B*/, 0xFF /*A*/);
+    SDL_RenderDrawLine(gRenderer, (SCREEN_WIDTH - a) / 2, (SCREEN_HEIGHT - a) / 2, (SCREEN_WIDTH - a) / 2, (SCREEN_HEIGHT + a) / 2);
+    SDL_SetRenderDrawColor(gRenderer, 0 /*R*/, 0 /*G*/, 255 /*B*/, 0xFF /*A*/);
+    SDL_RenderDrawLine(gRenderer, (SCREEN_WIDTH + a) / 2, (SCREEN_HEIGHT - a) / 2, (SCREEN_WIDTH + a) / 2, (SCREEN_HEIGHT + a) / 2);
+    SDL_SetRenderDrawColor(gRenderer, 0 /*R*/, 157 /*G*/, 255 /*B*/, 0xFF /*A*/);
+    SDL_RenderDrawLine(gRenderer, (SCREEN_WIDTH - a) / 2, (SCREEN_HEIGHT + a) / 2, (SCREEN_WIDTH + a) / 2, (SCREEN_HEIGHT + a) / 2);
 }
 
 bool init()

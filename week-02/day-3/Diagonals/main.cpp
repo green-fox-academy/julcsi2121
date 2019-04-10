@@ -5,9 +5,10 @@
 const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 480;
 
+void checkPosition(int x1, int y1, int x2, int y2);
+
 //Draws geometry on the canvas
 void draw();
-
 
 //Starts up SDL and creates window
 bool init();
@@ -23,8 +24,20 @@ SDL_Renderer* gRenderer = nullptr;
 
 void draw()
 {
-    // draw a red horizontal line to the canvas' middle.
-    // draw a green vertical line to the canvas' middle.
+    // Draw the canvas' diagonals.
+    // If it starts from the upper-left corner it should be green, otherwise it should be red.
+    SDL_SetRenderDrawColor(gRenderer, 255, 0, 0, 0xFF);
+    checkPosition(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+    SDL_SetRenderDrawColor(gRenderer, 255, 0, 0, 0xFF);
+    checkPosition(SCREEN_WIDTH, 0, 0, SCREEN_HEIGHT);
+    };
+
+void checkPosition(int x1, int y1, int x2, int y2)
+{
+    if ( x1 == 0 && y1 ==0) {
+        SDL_SetRenderDrawColor(gRenderer, 0, 255, 0, 0xFF);
+        }
+    SDL_RenderDrawLine(gRenderer, x1, y1, x2, y2);
 }
 
 bool init()
@@ -37,7 +50,7 @@ bool init()
     }
 
     //Create window
-    gWindow = SDL_CreateWindow( "Line in the middle", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
+    gWindow = SDL_CreateWindow( "Diagonals", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
     if( gWindow == nullptr )
     {
         std::cout << "Window could not be created! SDL Error: " << SDL_GetError() << std::endl;
@@ -69,11 +82,9 @@ void close()
     SDL_Quit();
 }
 
-int main( int argc, char* args[] )
-{
+int main( int argc, char* args[] ) {
     //Start up SDL and create window
-    if( !init() )
-    {
+    if (!init()) {
         std::cout << "Failed to initialize!" << std::endl;
         close();
         return -1;
@@ -86,7 +97,7 @@ int main( int argc, char* args[] )
     SDL_Event e;
 
     //While application is running
-    while( !quit ) {
+    while (!quit) {
         //Handle events on queue
         while (SDL_PollEvent(&e) != 0) {
             //User requests quit

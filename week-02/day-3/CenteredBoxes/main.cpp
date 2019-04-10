@@ -42,6 +42,7 @@ void drawSquare(int a)
     SDL_SetRenderDrawBlendMode(gRenderer, SDL_BLENDMODE_BLEND);
     SDL_SetRenderDrawColor(gRenderer, 100, 0, 0, 100);
     SDL_Rect fillRect = { (SCREEN_WIDTH - a) / 2, (SCREEN_HEIGHT - a) / 2, a, a};
+    //SDL_RenderFillRect(gRenderer, &fillRect );
     SDL_RenderDrawRect(gRenderer, &fillRect );
 }
 

@@ -8,12 +8,13 @@ const int SCREEN_HEIGHT = 480;
 //Draws geometry on the canvas
 void draw();
 
-
 //Starts up SDL and creates window
 bool init();
 
 //Frees media and shuts down SDL
 void close();
+
+void drawSquare(int a);
 
 //The window we'll be rendering to
 SDL_Window* gWindow = nullptr;
@@ -23,8 +24,25 @@ SDL_Renderer* gRenderer = nullptr;
 
 void draw()
 {
-    // draw a red horizontal line to the canvas' middle.
-    // draw a green vertical line to the canvas' middle.
+    // create a square drawing function that takes 1 parameter:
+    // the square size
+    // and draws a square of that size to the center of the canvas.
+    // draw at least 3 squares with that function.
+    // the squares should not be filled otherwise they will hide each other
+    // avoid code duplication.
+    for (int i = 0; i < 3; ++i) {
+        drawSquare(60 + i * 30);
+
+    }
+    drawSquare(60);
+}
+
+void drawSquare(int a)
+{
+    SDL_SetRenderDrawBlendMode(gRenderer, SDL_BLENDMODE_BLEND);
+    SDL_SetRenderDrawColor(gRenderer, 100, 0, 0, 100);
+    SDL_Rect fillRect = { (SCREEN_WIDTH - a) / 2, (SCREEN_HEIGHT - a) / 2, a, a};
+    SDL_RenderDrawRect(gRenderer, &fillRect );
 }
 
 bool init()
@@ -37,7 +55,7 @@ bool init()
     }
 
     //Create window
-    gWindow = SDL_CreateWindow( "Line in the middle", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
+    gWindow = SDL_CreateWindow( "Center box function", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
     if( gWindow == nullptr )
     {
         std::cout << "Window could not be created! SDL Error: " << SDL_GetError() << std::endl;

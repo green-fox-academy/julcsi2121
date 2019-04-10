@@ -8,7 +8,6 @@ const int SCREEN_HEIGHT = 480;
 //Draws geometry on the canvas
 void draw();
 
-
 //Starts up SDL and creates window
 bool init();
 
@@ -21,10 +20,23 @@ SDL_Window* gWindow = nullptr;
 //The window renderer
 SDL_Renderer* gRenderer = nullptr;
 
+void drawLine(int x, int y);
+
 void draw()
 {
-    // draw a red horizontal line to the canvas' middle.
-    // draw a green vertical line to the canvas' middle.
+    // Create a line drawing function that takes 2 parameters:
+    // The x and y coordinates of the line's starting point
+    // and draws a 50 long horizontal line from that point.
+    // Draw at least 3 lines with that function. Use loop for that.
+    SDL_SetRenderDrawColor(gRenderer, 186, 24, 178, 0xFF);
+    for (int i = 0; i < 3; ++i) {
+        drawLine(30 + i * 50, 30 + i * 50);
+    }
+}
+
+void drawLine(int x, int y)
+{
+    SDL_RenderDrawLine(gRenderer, x, y, x + 50, y);
 }
 
 bool init()
@@ -37,7 +49,7 @@ bool init()
     }
 
     //Create window
-    gWindow = SDL_CreateWindow( "Line in the middle", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
+    gWindow = SDL_CreateWindow( "Horizontal lines", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
     if( gWindow == nullptr )
     {
         std::cout << "Window could not be created! SDL Error: " << SDL_GetError() << std::endl;

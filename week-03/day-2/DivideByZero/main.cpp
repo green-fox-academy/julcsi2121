@@ -27,3 +27,5 @@ void divideWithTen(int number)
     }
 
 }
+
+// ha 2x dobok vmi custom stringet, honnan tudja, hogy mit kapjon el a fenti kifejezéssel?

@@ -8,7 +8,18 @@ int main () {
     // Write a function that takes a filename as string,
     // then returns the number of lines the file contains.
     // It should return zero if it can't open the file
-    int numberOfLines = countNoOfLines("../my-file1.txt");
+    try {
+        int numberOfLines = countNoOfLines("../my-file.txt");
+        if(numberOfLines == 0) {
+            throw std::string("Opening failed or empty file");
+        } else {
+            std::cout << numberOfLines << std::endl;
+        }
+    } catch (std::string& e) {
+        std::cerr << e << std::endl;
+    }
+
+    int numberOfLines = countNoOfLines("../my-file.txt");
     std::cout << "Number of lines: " << numberOfLines << std::endl;
 
     return 0;
@@ -21,7 +32,7 @@ int countNoOfLines(std::string filename)
     try {
         kiscica.open(filename);
         if (kiscica.is_open() == 0) {
-            throw std::string("Opening failed");
+            throw std::string("Opening failed - message inside the function");
         }
         std::string text;
         int count;

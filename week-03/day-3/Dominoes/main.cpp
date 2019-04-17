@@ -25,7 +25,7 @@ int main(int argc, char* args[])
     std::vector<Domino> orderedDominoes;
     orderedDominoes.push_back(dominoes.at(0));
 
-    for (int i = 0; i < dominoes.size(); ++i) {
+    for (int i = 0; i < dominoes.size()-1; ++i) {
         std::pair<int, int> actualPair = orderedDominoes.at(i).getValues();
         for (int j = 0; j < dominoes.size(); ++j) {
             std::pair<int, int> pairToFind = dominoes.at(j).getValues();

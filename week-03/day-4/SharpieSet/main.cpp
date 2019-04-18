@@ -27,5 +27,7 @@ int main() {
     sharpieSet.countUseable();
     sharpieSet.removeTrash();
     sharpieSet.printSet();
+
+    std::cout << sharpieSet.getSharpie(1)->getColor() << std::endl;
     return 0;
 }

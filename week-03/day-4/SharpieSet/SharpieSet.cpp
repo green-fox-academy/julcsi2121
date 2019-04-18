@@ -4,8 +4,12 @@
 
 #include "SharpieSet.h"
 
-    void SharpieSet::addSharpie(Sharpie &sharpie) {
+void SharpieSet::addSharpie(Sharpie& sharpie) {
     Sharpies.push_back(sharpie);
+}
+
+Sharpie* SharpieSet::getSharpie(int i) {
+    return &Sharpies[i];
 }
 
 void SharpieSet::countUseable() {
@@ -31,3 +35,4 @@ void SharpieSet::printSet() {
         std::cout << "There is a sharpie: " << Sharpies.at(i).getColor() << " with ink amount: " << std::to_string(Sharpies.at(i).getInkAmount()) << std::endl;
     }
 }
+

@@ -1,3 +1,4 @@
+
 //
 // Created by Varga Júlia on 2019-04-18.
 //
@@ -17,6 +18,7 @@ public:
     void countUseable();
     void removeTrash();
     void printSet();
+    Sharpie* getSharpie(int i);
 private:
     std::vector<Sharpie> Sharpies;
 };

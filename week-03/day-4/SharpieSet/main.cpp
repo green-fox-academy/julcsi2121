@@ -10,24 +10,22 @@ int main() {
     Sharpie sharpie3("black", 1.5);
     Sharpie sharpie4("green", 2.5);
 
-    while (sharpie3.getInkAmount() > 0) {
-        sharpie3.use();
-    }
-
     SharpieSet sharpieSet;
     sharpieSet.addSharpie(sharpie1);
     sharpieSet.addSharpie(sharpie2);
     sharpieSet.addSharpie(sharpie3);
     sharpieSet.addSharpie(sharpie4);
 
-    while (sharpie2.getInkAmount() > 0) {
-        sharpie2.use();
-    }
-    sharpieSet.printSet();
-    sharpieSet.countUseable();
-    sharpieSet.removeTrash();
     sharpieSet.printSet();
 
-    std::cout << sharpieSet.getSharpie(1)->getColor() << std::endl;
+    while (sharpieSet.getSharpie(0)->getInkAmount() > 0) {
+        sharpieSet.getSharpie(0)->use();
+    }
+
+
+    sharpieSet.printSet();
+
+    sharpieSet.removeTrash();
+    sharpieSet.printSet();
     return 0;
 }

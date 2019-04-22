@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Pirate.h"
+#include "Ship.h"
 
 int main() {
     srand (time(NULL));
@@ -17,6 +18,11 @@ int main() {
     EdwardKenway.brawl(templar);
     EdwardKenway.printStats();
     templar.printStats();
+
+    Ship Jackdaw;
+    Jackdaw.fillShip();
+    Jackdaw.printEveryInfo();
+    Jackdaw.printStandardInfo();
 
     return 0;
 }

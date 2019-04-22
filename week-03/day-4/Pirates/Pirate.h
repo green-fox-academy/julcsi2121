@@ -20,17 +20,17 @@ public:
     bool isSleep();
     bool isAlive();
     void printStats();
-
     void setRumLevels(int rumLevels);
-
     void setSleep(bool sleep);
-
     void setAlive(bool alive);
+    bool isHasParrot();
+    void setHasParrot(bool hasParrot);
 
 private:
     int rumLevels;
     bool sleep;
     bool alive;
+    bool hasParrot;
 };
 
 

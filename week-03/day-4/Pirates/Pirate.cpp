@@ -9,6 +9,7 @@ Pirate::Pirate(){
     rumLevels = 1;
     alive = true;
     sleep = false;
+    hasParrot = false;
 }
 
 void Pirate::drinkSomeRum() {
@@ -71,6 +72,7 @@ void Pirate::printStats() {
     std::cout << "\t - Rum levels: " << getRumLevels() << std::endl;
     std::cout << "\t - Sleep status: " << isSleep() << std::endl;
     std::cout << "\t - Alive: " << isAlive() << std::endl;
+    std::cout << "\t - Has Parrot: " << isHasParrot() << std::endl;
 }
 
 void Pirate::setRumLevels(int rumLevels) {
@@ -83,4 +85,12 @@ void Pirate::setSleep(bool sleep) {
 
 void Pirate::setAlive(bool alive) {
     Pirate::alive = alive;
+}
+
+bool Pirate::isHasParrot() {
+    return hasParrot;
+}
+
+void Pirate::setHasParrot(bool hasParrot) {
+    Pirate::hasParrot = hasParrot;
 }

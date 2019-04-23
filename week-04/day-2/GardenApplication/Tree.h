@@ -14,8 +14,8 @@ class Tree : public Plant{
 public:
     Tree(std::string color);
     Tree(std::string color, int waterAmount);
-    std::string needsWater();
-    void info();
+    std::string needsWater() override;
+    void info() override;
 private:
     double _absorptionRate;
 };

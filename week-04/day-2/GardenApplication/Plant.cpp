@@ -48,5 +48,5 @@ int Plant::getCurrentWaterAmount() const {
 }
 
 void Plant::setCurrentWaterAmount(int currentWaterAmount) {
-    _currentWaterAmount = currentWaterAmount;
+    _currentWaterAmount += currentWaterAmount;
 }

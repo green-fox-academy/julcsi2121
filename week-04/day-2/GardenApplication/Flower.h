@@ -14,8 +14,8 @@ class Flower : public Plant{
 public:
     Flower(std::string color);
     Flower(std::string color, int waterAmount);
-    std::string needsWater();
-    void info();
+    std::string needsWater() override;
+    void info() override;
 private:
     double _absorptionRate;
 };

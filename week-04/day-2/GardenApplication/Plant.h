@@ -21,8 +21,8 @@ public:
     int getCurrentWaterAmount() const;
     void setCurrentWaterAmount(int currentWaterAmount);
 
-    std::string needsWater();
-    void info();
+    virtual std::string needsWater();
+    virtual void info();
 private:
     std::string _color;
     std::string _type;

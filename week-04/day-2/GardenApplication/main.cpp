@@ -2,6 +2,7 @@
 #include "Plant.h"
 #include "Flower.h"
 #include "Tree.h"
+#include "Garden.h"
 
 int main() {
     /*
@@ -11,19 +12,25 @@ int main() {
     növény -> virág: csak pontos értékek egyediek
      */
     Plant unspec("purple");
-    unspec.info();
-    Plant withWater("pink", 5);
-    withWater.info();
+    Plant withWater("pink", 4);
 
     Flower blue("Blue");
-    blue.info();
 
-    Flower yellow("Red", 10);
-    yellow.info();
+    Flower yellow("Red", 3);
 
     Tree bukk("grey");
-    Tree tolgy("brown", 14);
-    bukk.info();
-    tolgy.info();
+    Tree tolgy("brown", 7);
+
+    Garden mygarden;
+    mygarden.addPlant(&blue);
+    mygarden.addPlant(&yellow);
+    mygarden.addPlant(&bukk);
+    mygarden.addPlant(&tolgy);
+    mygarden.printPlantInfo();
+
+    //std::cout << mygarden.countThirsty();
+    mygarden.watering(12);
+    mygarden.watering(12);
+    mygarden.watering(12);
 
 }

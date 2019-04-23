@@ -16,7 +16,7 @@ enum Level {
     SENIOR
 };
 
-class Mentor : private Person {
+class Mentor : public Person {
 public:
     Mentor();
     Mentor(std::string name, int age, Gender gender, Level level);
@@ -24,8 +24,8 @@ public:
     Level getLevel() const;
     void setLevel(Level level);
 
-    void getGoal();
-    void introduce();
+    void getGoal() override;
+    void introduce() override;
     std::string translateLevel(Level level);
 
 private:

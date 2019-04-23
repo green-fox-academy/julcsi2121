@@ -20,8 +20,8 @@ public:
     int getSkippedDays() const;
     void setSkippedDays(int skippedDays);
 
-    void getGoal();
-    void introduce();
+    void getGoal() override;
+    void introduce() override;
     void skipDays(int numberOfDays);
 
 private:

@@ -20,8 +20,8 @@ public:
     int getHiredStudents() const;
     void setHiredStudents(int hiredStudents);
 
-    void introduce();
-    void setGoal();
+    void introduce() override;
+    void getGoal() override;
     void hire();
 
 private:

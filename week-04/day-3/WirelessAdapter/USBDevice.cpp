@@ -10,9 +10,9 @@ USBDevice::USBDevice(std::string id, USBType type) : Device(id) {
 }
 
 std::string USBDevice::getType() {
-    if (_type == USB_TYPE_2) {
-        return "USB Type 2";
+    if (_type == USBType::USB_TYPE_2) {
+        return "Type 2";
     } else {
-        return "USB Type 3";
+        return "Type 3";
     }
 }

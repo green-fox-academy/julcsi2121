@@ -7,11 +7,10 @@
 
 #include "Device.h"
 
-enum USBType{
+enum class USBType{
     USB_TYPE_2,
     USB_TYPE_3
 };
-
 
 class USBDevice : virtual public Device {
 public:

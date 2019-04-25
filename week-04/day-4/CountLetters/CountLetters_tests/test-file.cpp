@@ -50,16 +50,16 @@ TEST(countLetterTests, checkValues) {
 }
 
 TEST(countLetterTests, checkWithDuplicates) {
-    std::string input = "sstr";
+    std::string input = "sstttttr";
     std::map<char, int> result = countLetters(input);
     std::map<char, int>::iterator it = result.begin();
-    bool match = true;
+    int max = 0;
 
     for (; it != result.end(); ++it) {
         if (it->second != 1) {
-            match = false;
+            max = it->second;
         }
     }
 
-    ASSERT_EQ(match, false);
+    ASSERT_EQ(max, 5);
 }

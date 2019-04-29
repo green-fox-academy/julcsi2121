@@ -6,10 +6,12 @@
 #include "Tile.h"
 #include "Floor.h"
 #include "Wall.h"
+#include "Screen.h"
+#include "ctime"
 
 //Screen dimension constants
-const int SCREEN_WIDTH = 640;
-const int SCREEN_HEIGHT = 480;
+const int SCREEN_WIDTH = 500;
+const int SCREEN_HEIGHT = 500;
 
 //Starts up SDL and creates window
 bool init();
@@ -26,29 +28,6 @@ SDL_Window *gWindow = nullptr;
 //The window renderer
 SDL_Renderer *gRenderer = nullptr;
 
-/*
-void drawTile(std::string path) {
-    //tile::floor, tile::wall, screen: std::vector<std::vector<tile*>>
-    //load image - floor vs wall
-    SDL_Surface* loadedTile = IMG_Load( path.c_str());
-    if(loadedTile == nullptr) {
-        SDL_Log("PNG image couldn't be loaded, SDL_image Error: %s", IMG_GetError());
-    }
-
-    SDL_Texture* texture = SDL_CreateTextureFromSurface( gRenderer, loadedTile );
-    SDL_FreeSurface( loadedTile );
-
-    //draw tile fgv - mindkettőt kéne kezelnie, mert a pozíció típusfüggetlen
-    SDL_Rect tile;
-    tile.x = 0;
-    tile.y = 0;
-    tile.w = 50;
-    tile.h = 50;
-
-    SDL_RenderCopy(gRenderer, texture, NULL, &tile);
-
-}
- */
 
 bool init()
 {
@@ -101,6 +80,8 @@ void close()
 
 int main(int argc, char *args[])
 {
+    srand (time(NULL));
+
     //Start up SDL and create window
     if (!init()) {
         SDL_Log("Failed to initialize!");
@@ -113,6 +94,11 @@ int main(int argc, char *args[])
 
     //Event handler
     SDL_Event e;
+
+    //init map of screen
+    Screen screen;
+    screen.fillMatrixWithTiles();
+    screen.createPath(40, 4);
 
     //While application is running
     while (!quit) {
@@ -132,9 +118,11 @@ int main(int argc, char *args[])
         //tile.createTexture(gRenderer);
         //tile.drawTexture(gRenderer);
 
-        Wall wal;
-        wal.createTexture(gRenderer);
-        wal.drawTexture(gRenderer);
+        //Wall wal;
+        //wal.createTexture(gRenderer);
+        //wal.drawTexture(gRenderer);
+
+        screen.drawScreen(gRenderer);
 
         SDL_SetRenderDrawColor(gRenderer, 0xFF, 0x00, 0x00, 0xFF);
 

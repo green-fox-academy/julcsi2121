@@ -7,3 +7,10 @@
 Floor::Floor() {
     _path = "../img/floor.png";
 }
+
+Floor::Floor(int i, int j) {
+    _x = i;
+    _y = j;
+    _path = "../img/floor.png";
+    _tileType = FLOOR;
+}

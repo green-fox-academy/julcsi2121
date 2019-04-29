@@ -11,7 +11,6 @@
 class Floor : public Tile {
 public:
     Floor();
+    Floor(int i, int j);
 };
-
-
 #endif //LINE_IN_THE_MIDDLE_FLOOR_H

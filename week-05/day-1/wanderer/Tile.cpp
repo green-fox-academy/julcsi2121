@@ -9,6 +9,13 @@ Tile::Tile() {
     _y = 0;
 }
 
+Tile::Tile(int x, int y)
+{
+    _x = x;
+    _y = y;
+
+}
+
 void Tile::drawTexture(SDL_Renderer* gRenderer)
 {
 
@@ -29,4 +36,8 @@ SDL_Texture* Tile::createTexture(SDL_Renderer* gRenderer)
 
     _texture = SDL_CreateTextureFromSurface( gRenderer, loadedTile );
     SDL_FreeSurface( loadedTile );
+}
+
+tile_type Tile::getTileType() const {
+    return _tileType;
 }

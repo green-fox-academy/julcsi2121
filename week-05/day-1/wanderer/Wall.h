@@ -11,6 +11,7 @@
 class Wall : public Tile {
 public:
     Wall();
+    Wall(int i, int j);
 };
 
 

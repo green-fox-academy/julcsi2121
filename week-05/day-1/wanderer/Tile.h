@@ -11,19 +11,29 @@
 #include <SDL_log.h>
 #include <SDL_image.h>
 
+enum tile_type {
+    FLOOR,
+    WALL
+};
+
 
 class Tile {
 public:
     Tile();
+    Tile(int x, int y);
     void drawTexture(SDL_Renderer* gRenderer);
     SDL_Texture* createTexture(SDL_Renderer* gRenderer);
 protected:
     SDL_Texture* _texture;
     std::string _path;
-private:
     int _x;
     int _y;
     SDL_Rect _tile;
+public:
+    tile_type getTileType() const;
+
+protected:
+    tile_type _tileType;
 };
 
 

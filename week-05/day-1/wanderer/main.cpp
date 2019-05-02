@@ -8,6 +8,7 @@
 #include "Wall.h"
 #include "Screen.h"
 #include "ctime"
+#include "DrawCharacter.h"
 
 //Screen dimension constants
 const int SCREEN_WIDTH = 500;
@@ -18,9 +19,6 @@ bool init();
 
 //Frees media and shuts down SDL
 void close();
-
-//attemption to draw a tile
-//void drawTile(std::string path);
 
 //The window we'll be rendering to
 SDL_Window *gWindow = nullptr;
@@ -38,7 +36,7 @@ bool init()
     }
 
     //Create window
-    gWindow = SDL_CreateWindow("Center box function", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH,
+    gWindow = SDL_CreateWindow("balazs waz here :)", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH,
                                SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
     if (gWindow == nullptr) {
         SDL_Log("Window could not be created! SDL Error: %s", SDL_GetError());
@@ -100,6 +98,9 @@ int main(int argc, char *args[])
     screen.fillMatrixWithTiles();
     screen.createPath(40, 4);
 
+    DrawCharacter character(&screen);
+    character.loadTexture(gRenderer, "../img/hero-down.png");
+
     //While application is running
     while (!quit) {
         //Handle events on queue
@@ -107,6 +108,32 @@ int main(int argc, char *args[])
             //User requests quit
             if (e.type == SDL_QUIT) {
                 quit = true;
+            }
+            else if( e.type == SDL_KEYDOWN ) {
+                switch( e.key.keysym.sym ) {
+                    case SDLK_UP:
+                        character.loadTexture(gRenderer, "../img/hero-up.png");
+                        character.moveUp();
+                        break;
+                    case SDLK_DOWN:
+                        //Pressed Down
+                        character.loadTexture(gRenderer, "../img/hero-down.png");
+                        character.moveDown();
+                        break;
+                    case SDLK_LEFT:
+                        //Pressed Left
+                        character.loadTexture(gRenderer, "../img/hero-left.png");
+                        character.moveLeft();
+                        break;
+                    case SDLK_RIGHT:
+                        //Pressed Right
+                        character.loadTexture(gRenderer, "../img/hero-right.png");
+                        character.moveRight();
+                        break;
+                    default:
+                        //Pressed something else
+                        break;
+                }
             }
         }
 
@@ -123,6 +150,7 @@ int main(int argc, char *args[])
         //wal.drawTexture(gRenderer);
 
         screen.drawScreen(gRenderer);
+        character.drawTexture(gRenderer);
 
         SDL_SetRenderDrawColor(gRenderer, 0xFF, 0x00, 0x00, 0xFF);
 

@@ -10,15 +10,12 @@
 #include "Tile.h"
 #include "Floor.h"
 #include "Wall.h"
+#include "Map.h"
 
 
-class Screen {
+class Screen : public Map {
 public:
     void drawScreen(SDL_Renderer* gRenderer);
-    void fillMatrixWithTiles();
-    void createPath(int nOfTunnels, int tunnelLength);
-private:
-    std::vector<std::vector<int>> _mapOfTiles;
 };
 
 

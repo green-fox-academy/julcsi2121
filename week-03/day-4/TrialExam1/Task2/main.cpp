@@ -25,13 +25,43 @@ int removeWords(std::string path)
     while (getline(myFile, line)) {
         std::transform(line.begin(), line.end(), line.begin(), ::tolower);
         for (int i = 0; i < swearWords.size(); ++i) {
-            std::string delimiter = swearWords.at(i);
-            int pos = line.find(" " + delimiter);
+            std::string actualWord = swearWords.at(i);
+            int pos = line.find(actualWord);
             if(pos != -1) {
-                line.erase(pos - 1, delimiter.size());
+                std::cout << line.substr(pos-1, 10) << std::endl;
+                line.erase(pos - 1, actualWord.size());
                 count ++;
             }
         }
     }
     return count;
 }
+
+
+
+/*
+ * ifstream-hez badbit-et érdemes
+ * ha megnézzük a badbitet, akkor nem kell az if-es izé a try-ban
+ * írás: badbit, failbit is kell
+ *
+ * stringstream:
+ * .str - átcsinálja stringgé
+ *
+ * szavaknak csinálni egy stringet - stringstreamből beletölteni a szavakat a változóba - 2. while
+ *
+ * végigmenni a káromkodós-stavas listán
+ * szavakat ki lehet menteni egy vectorba, hanem matchel a szavakkal
+ *
+ * tolower át is alakítja
+ *
+ * külön lowercase fgv - végigmegy a stringen karakterenként, új stringhez hozzáfűzzük - std::tolower(string[i])
+ *
+ * ha írásjel van a végén:
+ * extra karakter levágó fgv:
+ * utolsó karakter egyenlő-e . vagy stb. (.back - utolsó karaktert kiszedi)
+ * pop back - kiszedi az utolsó elemet
+ *
+ * ha kész a vektor - utána ki lehet íratni file-ba - ofstream
+ *
+ * mapnél a számolós kifejezés nem csak char-ra működik, hanem bármilyen adattípussal
+ */

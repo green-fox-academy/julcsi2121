@@ -27,7 +27,7 @@ int main()
     strcpy(sandwich1.name, "blabla");
     sandwich1.price = 2.50;
     sandwich1.weight = 1.3;
-    
+
     printf("Price of your order: %.2f\n", getPrice(sandwich1, 3));
     return 0;
 }

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int comparator (const void * a, const void * b);
+int comparator (const int * a, const int * b);
 
 // please allocate a 10 long array and fill it with even numbers
 // please allocate a 10 long array and fill it with odd numbers
@@ -57,10 +57,10 @@ int main()
     return 0;
 }
 
-int comparator (const void * a, const void * b)
+int comparator (const int * a, const int * b)
 {
-    int left = *(const int*)a;
-    int right = *(const int*)b;
+    int left = *a;
+    int right = *b;
 
     if (left < right) {
         return 1;

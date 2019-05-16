@@ -16,6 +16,9 @@ int main()
 
     char * result2 = concatenate_strings("nagyonnagyonhosszú", "stringkndsknskfnakgnrkvnydfkvndkvnbdyvbndykvnfivnaivndfvndk");
     printf("%s\n", result2);
+
+    free(result);
+    free(result2);
     return 0;
 }
 
@@ -34,7 +37,6 @@ char* concatenate_strings(char* string1, char* string2)
     for (int i = 0; i < size2; ++i) {
         result[size1 + i] = string2[i];
     }
-
     return result;
 
 }

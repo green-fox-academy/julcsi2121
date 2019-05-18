@@ -13,6 +13,7 @@ int main()
     char string[256];
 
     gets(string);
+    split_to_words(string);
 
     return(0);
 }
@@ -20,4 +21,9 @@ int main()
 void split_to_words(char string[])
 {
     char* word = strtok(string, " ");
+
+    while (word != '\0'){
+        puts(word);
+        word = strtok(NULL, " ");
+    }
 }

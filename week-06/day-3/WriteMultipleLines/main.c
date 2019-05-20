@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 
+void write_multiple_lines(char* path, char* word, int num);
+
 // Create a function that takes 3 parameters: a path, a word and a number
 // and is able to write into a file.
 // The path parameter should be a string that describes the location of the file you wish to modify
@@ -11,6 +13,19 @@
 
 int main()
 {
+    write_multiple_lines("../my-file.txt", "cat", 6);
 
     return 0;
+}
+
+void write_multiple_lines(char* path, char* word, int num)
+{
+    FILE* myfile = fopen(path, "w");
+
+    for (int i = 0; i < num; ++i) {
+        fprintf(myfile, "%s\n", word);
+    }
+
+    fclose(myfile);
+
 }

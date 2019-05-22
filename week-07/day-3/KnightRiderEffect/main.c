@@ -2,7 +2,7 @@
 #include "stm32746g_discovery.h"
 #include "stdint.h"
 
-//Create a Knight Rider effect with 4 LED-s
+//Modify the Knight Rider project, to work in a circular mode.
 
 
 void init_pins()
@@ -40,31 +40,24 @@ int main(void)
 	HAL_Init();
 	init_pins();
 
-
-	int direction = 0;
 	uint32_t red_led = (1 << 6);
 
 	while (1) {
 
-		if(direction == 0) {
+		while(red_led < 1024) {
 			red_led <<= 1;
 			GPIOF->BSRR = red_led;
 			HAL_Delay(250);
 			GPIOF->BSRR = red_led << 16;
 			HAL_Delay(250);
-			if (red_led == 1024) {
-				direction = 1;
-			}
-		} else {
+
+		}
+		while (red_led > 128) {
 			red_led >>= 1;
 			GPIOF->BSRR = red_led;
 			HAL_Delay(250);
 			GPIOF->BSRR = red_led << 16;
 			HAL_Delay(250);
-
-			if (red_led == 128) {
-				direction = 0;
-			}
 		}
 	}
 }

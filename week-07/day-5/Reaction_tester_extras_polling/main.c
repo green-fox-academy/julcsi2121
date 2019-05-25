@@ -12,6 +12,7 @@ RNG_HandleTypeDef rng_config;
 int is_in_circle(TS_StateTypeDef touch, int radius, uint32_t circle_x, uint32_t circle_y);
 void generate_circle_x(uint16_t radius, RNG_HandleTypeDef *rng_config, uint32_t *result);
 void generate_circle_y(uint16_t radius, RNG_HandleTypeDef *rng_config, uint32_t *result);
+
 static void Error_Handler(void);
 static void SystemClock_Config(void);
 
@@ -40,24 +41,37 @@ void init_rng()
 
 int main(void)
 {
+	//initialization
 	HAL_Init();
 	SystemClock_Config();
 	init_rng();
 	init_lcd();
 	init_ts();
 
+	//to monitor game phase & touches
+	TS_StateTypeDef ts_state;
+	int game_state = 1;
+	int round = 0;
+
+	//to handle circles
 	uint16_t radius = 50;
 	uint32_t circle_x = 0;
 	uint32_t circle_y = 0;
+
+	//to handle the last 10 round's average
 	float average = 0;
-	int round = 0;
 	float result_data[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-	int game_state = 1;
+
+	//to measure time
+	uint32_t random = 0;
 	uint32_t start = 0;
-	uint32_t elapsed = 0;
-	uint32_t number = 2;
+	uint32_t stop = 0;
+
+	//for printing out to the screen
 	char num_to_array[50];
-	TS_StateTypeDef ts_state;
+
+	//welcome message
+	BSP_LCD_Clear(0xFF80FFFF);
 	BSP_LCD_DisplayStringAt(0, 0, "Touch the screen to start the game", CENTER_MODE);
 
 
@@ -67,45 +81,52 @@ int main(void)
 		if (ts_state.touchDetected && game_state == 1) {
 			HAL_Delay(1000);
 
+			//display some intermediate text
 			BSP_LCD_Clear(0xFF80FFFF);
 			BSP_LCD_DisplayStringAt(0, 0, "Next round coming", CENTER_MODE);
 			HAL_Delay(2000);
 
+			//waiting for 1-10 seconds
 			BSP_LCD_Clear(0xFF80FFFF);
 			BSP_LCD_DisplayStringAt(0, 0, "Wait...", CENTER_MODE);
-			HAL_RNG_GenerateRandomNumber(&rng_config, &number);
-			number = number % 10000 + 1;
-			HAL_Delay(number);
+			HAL_RNG_GenerateRandomNumber(&rng_config, &random);
+			random = random % 10000 + 1;
+			HAL_Delay(random);
 
-			start = HAL_GetTick();
+			//drawing a randomly positioned circle & giving instructions to the user
 			BSP_LCD_Clear(0xFF80FFFF);
-			BSP_LCD_DisplayStringAt(0, 0, "Touch the screen NOW!", CENTER_MODE);
-
+			BSP_LCD_DisplayStringAt(0, 0, "Touch the circle NOW!", CENTER_MODE);
 			generate_circle_x(radius, &rng_config, &circle_x);
 			generate_circle_y(radius, &rng_config, &circle_y);
 			BSP_LCD_FillCircle(circle_x, circle_y, radius);
-			ts_state.touchDetected = 0;
 
+			//start counting, reset touch detection, toggle the other phase of the game
+			start = HAL_GetTick();
+			ts_state.touchDetected = 0;
 			game_state = 0;
 		}
 
 		else if (ts_state.touchDetected && game_state == 0 && is_in_circle(ts_state, radius, circle_x, circle_y) == 1) {
 			HAL_Delay(1000);
 
-			elapsed = HAL_GetTick();
-			uint32_t time = elapsed - start;
+			//getting the reaction time in seconds
+			stop = HAL_GetTick();
+			uint32_t time = stop - start;
 			float total_time = time / 1000.0f;
 
+			//counting last 10 round's average
 			result_data[round % 10] = total_time;
 			for (int i = 0; i < 10; ++i) {
 				average += result_data[i];
 			}
-			average = average / (round + 1);
+			average = average / (round + 1);   // TODO - DIVIDE BY ROUNDS OR TEN
 
+			//printing the result
 			BSP_LCD_Clear(0xFF80FFFF);
 			sprintf(num_to_array, "Elapsed: %.2f, Average: %.2f", total_time, average);
 			BSP_LCD_DisplayStringAt(0, 0, num_to_array, LEFT_MODE);
 
+			//reset touch detection, game state, measure rounds elapsed
 			ts_state.touchDetected = 0;
 			game_state = 1;
 			round++;

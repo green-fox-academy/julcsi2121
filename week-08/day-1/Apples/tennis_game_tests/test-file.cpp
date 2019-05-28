@@ -3,8 +3,8 @@
 
 extern "C" {
 #include "tennis_game_1.h"
-//#include "tennis_game_2.h"
-//#include "tennis_game_3.h"
+#include "tennis_game_2.h"
+#include "tennis_game_3.h"
 }
 
 struct TennisScore
@@ -84,14 +84,14 @@ TEST(TennisTests, TestTennisGame1)
     testAllScores<tennis_game_1_t>();
 }
 
-/*
+
 TEST(TennisTests, TestTennisGame2)
 {
     testAllScores<tennis_game_2_t>();
 }
 
+
 TEST(TennisTests, TestTennisGame3)
 {
     testAllScores<tennis_game_3_t>();
 }
- */
